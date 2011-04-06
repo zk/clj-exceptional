@@ -11,7 +11,7 @@ A Clojure client for [Exceptional](http://getexceptional.com).
 ### Importing
 
     (ns foo
-      (:require [clj-exceptional :as cx
+      (:require [clj-exceptional :as cx]))
 
     ;; or
 
@@ -22,9 +22,9 @@ For the examples below I'll assume you're using the require method above.
 
 ### Basic Usage
 
-Set your key (!!IMPORTANT!!):
+Set your key !! IMPORTANT !!:
 
-    (cx/key! exceptional_app_api_key")
+    (cx/key! "exceptional_app_api_key")
 
 Post an exception (blocking):
 
@@ -33,6 +33,8 @@ Post an exception (blocking):
 Post an exception (non-blocking using agents):
 
     (cx/post-exc-async (Exception. "something went wrong!"))
+
+
 
 
 ### "Catch" Macros
@@ -44,7 +46,7 @@ Wrap some code (`catch-exc` returns the caught exception):
 
     ;; => #<Exception>
 
-Wrap some code ('rethrow-exc` re-throws the caught exception):
+Wrap some code (`rethrow-exc` re-throws the caught exception):
     
     (try
       (cx/rethrow-exc
