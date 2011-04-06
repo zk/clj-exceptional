@@ -4,4 +4,5 @@
                  [org.clojure/clojure-contrib "1.2.0"]
                  [cheshire "1.1.0"]
                  [clj-http "0.1.3"]]
-  :dev-dependencies [[swank-clojure "1.2.0"]])
+  :dev-dependencies [[swank-clojure "1.2.0"]
+                     [lein-clojars "0.6.0"]])

@@ -176,7 +176,7 @@
            (headers (:headers req))))
 
 
-(defn with-exceptional-catch
+(defn wrap-exceptional-catch
   "Ring middleware for posting all exceptions to Exceptional.  Exceptions
    are rethrown after posting. Adds request data to exceptional map."
   [handler]
@@ -185,7 +185,7 @@
      (add-request req)
      (handler req))))
 
-(defn with-exceptional-rethrow
+(defn wrap-exceptional-rethrow
   "Ring middleware for posting all exceptions to Exceptional.  Exceptions
    are rethrown after posting. Adds request data to exceptional map."
   [handler]
