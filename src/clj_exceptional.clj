@@ -159,7 +159,7 @@
   [mod & body]
   `(try
      ~@body
-     (catch Exception e# (do (post
+     (catch Exception e# (do (post-async
                               (-> (format-exception e#)
                                   ~mod))
                              (throw e#)))))
