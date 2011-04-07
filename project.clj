@@ -1,4 +1,4 @@
-(defproject clj-exceptional "0.7.0"
+(defproject clj-exceptional "0.7.1"
   :description "Clojure client for Exceptional http://getexceptional.com"
   :dependencies [[org.clojure/clojure "1.2.0"]
                  [org.clojure/clojure-contrib "1.2.0"]

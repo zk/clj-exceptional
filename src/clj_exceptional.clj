@@ -2,7 +2,8 @@
   (:require [cheshire.core :as che]
             [clj-http.client :as client]
             [clj-http.util :as cutil])
-  (:import [java.text SimpleDateFormat]))
+  (:import [java.text SimpleDateFormat])
+  (:refer-clojure :exclude [try]))
 
 (def *root-dir* (.getAbsolutePath (java.io.File. "")))
 (def date-format "yyyy-MM-dd'T'HH:mm:ssZZZZ")
@@ -193,6 +194,15 @@
     (rethrow-mod
      (add-request req)
      (handler req))))
+
+(defmacro try [& body]
+  (let [catch-forms (filter #(= 'catch (first %)) body)
+        forms (filter #(not (= 'catch (first %))) body)]
+    (println forms)
+    `(try
+       (rethrow-exc
+        ~@forms)
+       ~@catch-forms)))
 
 (comment
 
