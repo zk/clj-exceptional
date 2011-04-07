@@ -6,7 +6,7 @@ A Clojure client for [Exceptional](http://getexceptional.com).
 
 ### Lein / Cake
     
-    [clj-exceptional "0.7.0"]
+    [clj-exceptional "0.7.1"]
 
 ### Importing
 

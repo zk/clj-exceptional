@@ -27,7 +27,7 @@
 
 (def client-info
   {:name "clj-exceptional"
-   :version "0.7.0"
+   :version "0.7.1"
    :protocol_version "6"})
 
 (def shell-env (reduce
