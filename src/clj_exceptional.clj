@@ -198,7 +198,6 @@
 (defmacro try [& body]
   (let [catch-forms (filter #(= 'catch (first %)) body)
         forms (filter #(not (= 'catch (first %))) body)]
-    (println forms)
     `(try
        (rethrow-exc
         ~@forms)
