@@ -1,5 +1,5 @@
-(defproject clj-exceptional "0.7.1"
-  :description "Clojure client for Exceptional http://getexceptional.com"
+(defproject com.dsci/clj-exceptional "0.7.2-SNAPSHOT"
+  :description "Clojure client for Exceptional http://getexceptional.com (dsci fork with up-to-date deps)"
   :url "https://github.com/zkim/clj-exceptional"
   :dependencies [[cheshire "4.0.1"]
                  [clj-http "0.4.0"]]
