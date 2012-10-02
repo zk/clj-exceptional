@@ -5,7 +5,7 @@
   (:import [java.text SimpleDateFormat])
   (:refer-clojure :exclude [try]))
 
-(def *root-dir* (.getAbsolutePath (java.io.File. "")))
+(def ^:dynamic *root-dir* (.getAbsolutePath (java.io.File. "")))
 (def date-format "yyyy-MM-dd'T'HH:mm:ssZZZZ")
 (def date-formatter (SimpleDateFormat. date-format))
 (def _api-key (atom ""))
@@ -206,9 +206,9 @@
 (comment
 
   ;; Examples from README
-  
+
   ;; Please don't spam my account.
-  
+
   (key! "cfaabdee74ffc4d3e7c35391b0079629091f21c9")
 
   (post-exc (Exception. "first example"))
