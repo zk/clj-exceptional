@@ -5,11 +5,14 @@ A Clojure client for [Exceptional](http://getexceptional.com).
 ## Usage
 
 ### Lein / Cake
-    
+
+```clojure
     [clj-exceptional "0.7.1"]
+```
 
 ### Importing
 
+```clojure
     (ns foo
       (:require [clj-exceptional :as cx]))
 
@@ -17,6 +20,7 @@ A Clojure client for [Exceptional](http://getexceptional.com).
 
     (ns foo
       (:use cljs-exceptional))
+```
 
 For the examples below I'll assume you're using the require method above.
 
@@ -24,16 +28,21 @@ For the examples below I'll assume you're using the require method above.
 
 Set your key !! IMPORTANT !!:
 
+```clojure
     (cx/key! "exceptional_app_api_key")
+```
 
 Post an exception (blocking):
 
+```clojure
     (cx/post-exc (Exception. "something went wrong!"))
+```
 
 Post an exception (non-blocking using agents):
 
+```clojure
     (cx/post-exc-async (Exception. "something went wrong!"))
-
+```
 
 
 
@@ -41,32 +50,37 @@ Post an exception (non-blocking using agents):
 
 Wrap some code (`catch-exc` returns the caught exception):
 
+```clojure
     (cx/catch-exc
       (op-throw-exception))
 
     ;; => #<Exception>
+```
 
 Wrap some code (`rethrow-exc` re-throws the caught exception):
-    
+
+```clojure
     (try
       (cx/rethrow-exc
         (op-throws-exception))
       (catch Exception e (println "Something went wrong!!!)))
 
     ;; => nil
-    
+```
 ### Ring Handler
 
 clj-exceptional contains ring handlers (`wrap-exceptional-catch` and
 `wrap-exceptional-rethrow`) that will add information from
 the request map to the post.
 
+```clojure
     (def ring-app
       (-> routes
           (wrap-params)
           (wrap-file "resources/public")
           (wrap-file-info)
           (cx/wrap-exceptional-catch))
+```
 
 This will send an exceptional post containing request parameters such
 as `:remote-addr`, `:uri`, and `:headers`.
