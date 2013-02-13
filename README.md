@@ -7,19 +7,19 @@ A Clojure client for [Exceptional](http://getexceptional.com).
 ### Lein / Cake
 
 ```clojure
-    [clj-exceptional "0.7.1"]
+[clj-exceptional "0.7.1"]
 ```
 
 ### Importing
 
 ```clojure
-    (ns foo
-      (:require [clj-exceptional :as cx]))
+(ns foo
+  (:require [clj-exceptional :as cx]))
 
-    ;; or
+;; or
 
-    (ns foo
-      (:use cljs-exceptional))
+(ns foo
+  (:use cljs-exceptional))
 ```
 
 For the examples below I'll assume you're using the require method above.
@@ -29,19 +29,19 @@ For the examples below I'll assume you're using the require method above.
 Set your key !! IMPORTANT !!:
 
 ```clojure
-    (cx/key! "exceptional_app_api_key")
+(cx/key! "exceptional_app_api_key")
 ```
 
 Post an exception (blocking):
 
 ```clojure
-    (cx/post-exc (Exception. "something went wrong!"))
+(cx/post-exc (Exception. "something went wrong!"))
 ```
 
 Post an exception (non-blocking using agents):
 
 ```clojure
-    (cx/post-exc-async (Exception. "something went wrong!"))
+(cx/post-exc-async (Exception. "something went wrong!"))
 ```
 
 
@@ -51,21 +51,21 @@ Post an exception (non-blocking using agents):
 Wrap some code (`catch-exc` returns the caught exception):
 
 ```clojure
-    (cx/catch-exc
-      (op-throw-exception))
+(cx/catch-exc
+  (op-throw-exception))
 
-    ;; => #<Exception>
+;; => #<Exception>
 ```
 
 Wrap some code (`rethrow-exc` re-throws the caught exception):
 
 ```clojure
-    (try
-      (cx/rethrow-exc
-        (op-throws-exception))
-      (catch Exception e (println "Something went wrong!!!)))
+(try
+  (cx/rethrow-exc
+    (op-throws-exception))
+  (catch Exception e (println "Something went wrong!!!")))
 
-    ;; => nil
+;; => nil
 ```
 ### Ring Handler
 
@@ -74,12 +74,12 @@ clj-exceptional contains ring handlers (`wrap-exceptional-catch` and
 the request map to the post.
 
 ```clojure
-    (def ring-app
-      (-> routes
-          (wrap-params)
-          (wrap-file "resources/public")
-          (wrap-file-info)
-          (cx/wrap-exceptional-catch))
+(def ring-app
+  (-> routes
+      (wrap-params)
+      (wrap-file "resources/public")
+      (wrap-file-info)
+      (cx/wrap-exceptional-catch))
 ```
 
 This will send an exceptional post containing request parameters such
