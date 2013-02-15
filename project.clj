@@ -1,4 +1,4 @@
-(defproject clj-exceptional "0.7.1"
+(defproject org.clojars.soundcloud/clj-exceptional "0.7.2"
   :description "Clojure client for Exceptional http://getexceptional.com"
   :dependencies [[org.clojure/clojure "1.4.0"]
                  [cheshire "5.0.1"]
