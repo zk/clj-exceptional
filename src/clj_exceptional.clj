@@ -5,7 +5,7 @@
   (:import [java.text SimpleDateFormat])
   (:refer-clojure :exclude [try]))
 
-(def *root-dir* (.getAbsolutePath (java.io.File. "")))
+(def absolute-root-dir (.getAbsolutePath (java.io.File. "")))
 (def date-format "yyyy-MM-dd'T'HH:mm:ssZZZZ")
 (def date-formatter (SimpleDateFormat. date-format))
 (def _api-key (atom ""))
@@ -107,7 +107,7 @@
           (message (.getMessage e))
           (occured (now-iso)))
          (appenv
-          (root-dir *root-dir*)
+          (root-dir absolute-root-dir)
           (env java-env)
           (language @_language)
           (language-version @_language-version))

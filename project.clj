@@ -1,8 +1,7 @@
-(defproject clj-exceptional "0.7.1"
+(defproject org.clojars.soundcloud/clj-exceptional "0.7.2"
   :description "Clojure client for Exceptional http://getexceptional.com"
-  :dependencies [[org.clojure/clojure "1.2.0"]
-                 [org.clojure/clojure-contrib "1.2.0"]
-                 [cheshire "1.1.0"]
-                 [clj-http "0.1.3"]]
+  :dependencies [[org.clojure/clojure "1.4.0"]
+                 [cheshire "5.0.1"]
+                 [clj-http "0.6.4"]]
   :dev-dependencies [[swank-clojure "1.2.0"]
                      [lein-clojars "0.6.0"]])
