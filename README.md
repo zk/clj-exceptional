@@ -6,7 +6,7 @@ A Clojure client for [Exceptional](http://getexceptional.com).
 
 ## Usage
 
-### Lein / Cake
+### Lein
 
 ```clojure
 [clj-exceptional "0.9.0"]
