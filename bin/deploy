@@ -1,0 +1,11 @@
+#!/bin/bash
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+REPO=$SCRIPT_DIR/..
+
+cd  $REPO && \
+    lein jar && \
+    lein pom && \
+    scp $REPO/pom.xml $REPO/target/clj-exceptional.jar clojars@clojars.org: && \
+    lein install
