@@ -2,6 +2,8 @@
 
 A Clojure client for [Exceptional](http://getexceptional.com).
 
+[![Build Status](https://travis-ci.org/zkim/clj-exceptional.png)](https://travis-ci.org/zkim/clj-exceptional)
+
 ## Usage
 
 ### Lein / Cake
